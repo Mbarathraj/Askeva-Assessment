@@ -19,9 +19,6 @@ export default function Login() {
     const navigate = useNavigate();
     const [serverError, setServerError] = useState<string | null>(null);
     const [isSubmitting, setIsSubmitting] = useState(false);
-    const { isAuthenticated } = useAppSelector(
-        (state) => state.auth
-    );
 
     const [checkingAuth, setCheckingAuth] = useState(true);
 
