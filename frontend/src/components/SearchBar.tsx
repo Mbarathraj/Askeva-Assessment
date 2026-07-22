@@ -27,8 +27,7 @@ export default function SearchBar({ search, setSearch }: Props) {
 
     return () => clearTimeout(timer);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [value, setSearch]);
-
+ }, [value, search, setSearch]);
   return (
     <div className="relative mb-4">
       <FaSearch

@@ -51,6 +51,9 @@ export default function Employees() {
         }
 
     };
+    useEffect(() => {
+    setPage(1);
+}, [search, department, status]);
 
     useEffect(() => {
         dispatch(
