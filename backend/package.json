@@ -7,9 +7,10 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "dev": "nodemon server.js",
+  "start": "node server.js",
+  "test": "echo \"Error: no test specified\" && exit 1"
+},
   "dependencies": {
     "bcryptjs": "^3.0.3",
     "cookie-parser": "^1.4.7",
