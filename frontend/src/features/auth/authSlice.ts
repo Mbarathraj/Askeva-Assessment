@@ -9,7 +9,6 @@ import {
     getProfileAPI,
 } from "./authAPI";
 
-import { AuthState } from "./authTypes";
 
 const initialState = {
     user: null,

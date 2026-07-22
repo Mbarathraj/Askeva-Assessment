@@ -22,7 +22,7 @@ export default function EditEmployee() {
 
     const navigate = useNavigate();
 
-    const { employee, loading } = useAppSelector(
+    const { employee } = useAppSelector(
         state => state.employee
     );
 
