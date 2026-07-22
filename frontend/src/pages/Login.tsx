@@ -6,7 +6,7 @@ import { login } from "../features/auth/authSlice";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getProfile } from "../features/auth/authSlice";
-import { useAppSelector } from "../hooks/useAppSelector";
+
 const schema = z.object({
     email: z.string().email("Enter a valid email address"),
     password: z.string().min(6, "Password must be at least 6 characters"),
