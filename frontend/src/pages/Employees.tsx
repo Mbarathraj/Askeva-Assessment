@@ -52,20 +52,21 @@ export default function Employees() {
 
     };
     useEffect(() => {
-    setPage(1);
-}, [search, department, status]);
+        const fetchEmployees = async () => {
+            dispatch(
+                getEmployees({
+                    page,
+                    limit: 10,
+                    search,
+                    department,
+                    status,
+                })
+            );
+        };
 
-    useEffect(() => {
-        dispatch(
-            getEmployees({
-                page,
-                limit: 10,
-                search,
-                department,
-                status,
-            })
-        );
-    }, [page, search, department, status]);
+        fetchEmployees();
+
+    }, [page, search, department, status, dispatch]);
 
     return (
         <DashboardLayout>
@@ -87,14 +88,24 @@ export default function Employees() {
 
             <SearchBar
                 search={search}
-                setSearch={setSearch}
+                setSearch={(value) => {
+                    setPage(1);
+                    setSearch(value);
+                }}
             />
+
 
             <FilterBar
                 department={department}
-                setDepartment={setDepartment}
+                setDepartment={(value) => {
+                    setPage(1);
+                    setDepartment(value);
+                }}
                 status={status}
-                setStatus={setStatus}
+                setStatus={(value) => {
+                    setPage(1);
+                    setStatus(value);
+                }}
             />
 
             <EmployeeTable
